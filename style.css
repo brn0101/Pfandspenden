@@ -1,0 +1,265 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #2c3e50;
+    padding: 20px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Logo links, Menü rechts */
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Hover-Effekt: grüne Unterstreichung */
+.nav-menu a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #2ecc71; /* Grün */
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.organisationen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.organisation {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.organisation:hover {
+    transform: scale(1.05);
+}
+
+
+
+.hero {
+    width: 100%;                 /* volle Breite */
+    min-height: 60vh;            /* Höhe = 60% der Viewport-Höhe */
+    background-image: url('images/hero.jpg');
+    background-size: cover;      /* Bild füllt den Bereich */
+    background-position: center; /* Bild zentrieren */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;     /* Text horizontal zentrieren */
+    align-items: center;         /* Text vertikal zentrieren */
+    text-align: center;
+    color: white;
+}
+
+
+
+.hero p {
+    background-color: rgba(0, 0, 0, 0.5); /* halbtransparenter Hintergrund hinter Text */
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+
+.donation {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+
+    border-radius: 10px;
+    text-align: center;
+}
+
+.donation h2 {
+    color: #2c3e50;
+    font-size: 5em;
+    margin-bottom: 15px;
+}
+
+.donation .short-description {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.donation .detailed-description {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #34495e;
+}
+
+
+.hilfekommtan {
+    text-align: center;
+    padding: 40px 20px;
+    background-color : #ece9e9;
+    margin-top: 50px; /* Abstand zum vorherigen Element */
+}
+
+.hilfekommtan h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;  /* horizontal zentrieren */
+    gap: 50px;                /* Abstand zwischen den Zahlen-Text-Kombinationen */
+}
+
+.number-item {
+    display: flex;
+    flex-direction: column;   /* Zahl über Text */
+    align-items: center;      /* horizontal zentrieren */
+}
+
+.number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.number-text {
+    font-size: 1em;
+    color: #34495e;
+    margin-top: 10px;        /* Abstand zwischen Zahl und Text */
+}
+
+
+
+.organisation img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.organisation h3 {
+    margin: 15px 0 5px 0;
+    font-size: 1.2em;
+}
+.faq-item {
+    margin-bottom: 10px;
+}
+.blue-line {
+     border: none;              /* Standard-Linie entfernen */
+     height: 6px;               /* Dicke der Linie */
+     background-color: #2c3e50; /* Blau */
+     width: 20%;                /* Breite der Linie */
+     margin: 40px auto 20px auto;         /* Abstand oben/unten + zentriert */
+     border-radius: 5px;        /* Optional: abgerundete Enden */
+ }
+.faq h2 {
+    width: 50%;               /* nur 50% der Bildschirmbreite */
+    margin: 30px auto 30px auto; /* zentrieren + Abstand nach unten */
+    font-size: 4em;           /* Schriftgröße */
+    color: #2c3e50;           /* Textfarbe */
+    text-align: center;       /* Text zentrieren innerhalb der Box */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.faq-question {
+    width: 40%; /* Breite beibehalten */
+    padding: 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; /* Pfeil rechts */
+    align-items: center;
+
+    margin: 10px auto; /* horizontal mittig */
+}
+
+
+.faq-question:hover {
+    background-color: #2980b9;
+}
+
+.arrow {
+    transition: transform 0.3s; /* Animation für Pfeil */
+}
+
+
+.faq-answer {
+    display: none;
+    width: 40%;               /* gleiche Breite wie Button */
+    margin: 0 auto;           /* horizontal mittig */
+    padding: 5px 35px 20px 35px;
+
+
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+
+
