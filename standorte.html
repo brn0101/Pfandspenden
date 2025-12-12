@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <title>Standorte - Pfandspenden</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+
 <header>
     <div class="header-container">
         <div class="logo"><h1>Pfandspenden</h1></div>
         <nav class="nav-menu">
             <a href="index.html">Home</a>
             <a href="aboutus.html">Über uns</a>
-
-
             <a href="kontakt.html">Kontakt</a>
         </nav>
     </div>
@@ -22,16 +33,14 @@
 <main>
     <section class="page-section">
         <h2>Unsere Standorte</h2>
-        <p>Hier finden Sie alle Standorte unserer Pfandautomaten:</p>
-        <ul>
-            <li>Schule Musterstadt, Musterstraße 1</li>
-            <li>Supermarkt Beispielstadt, Einkaufsstraße 5</li>
-            <li>Gemeindezentrum Testhausen, Hauptplatz 3</li>
-            <li>Weitere Standorte folgen in Kürze...</li>
-        </ul>
-        <p>Unsere Automaten werden regelmäßig geleert und die Spenden weitergeleitet.</p>
+        <p>Hier finden Sie unsere Pfandspenden-Standorte:</p>
+
+        <!-- Karte -->
+        <div id="map"></div>
+
     </section>
 </main>
+
 
 <footer>
     <div>
@@ -40,12 +49,16 @@
         <a href="https://www.youtube.com" target="_blank">YouTube</a> |
         <a href="https://www.facebook.com" target="_blank">Facebook</a>
     </div>
-    <div style="margin-top:20px;">
-        <a href="#">Kontakt</a> | <a href="#">Newsletter</a>
+
+    <div style="margin-top: 20px;">
+        <a href="#">Kontakt</a> |
+        <a href="#">Newsletter</a>
     </div>
-    <div style="margin-top:20px;">
+
+    <div style="margin-top: 20px;">
         <a href="#">Informieren über</a>
     </div>
+
     <div class="footer-bottom">
         &copy; 2025 Pfandspenden-Initiative |
         <a href="impressum.html">Impressum</a> |
@@ -55,5 +68,33 @@
         <a href="hinweis-portal.html">Hinweis-Portal</a>
     </div>
 </footer>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    // Karte erstellen (Nürnberg Zentrum)
+    var map = L.map('map').setView([49.4521, 11.0767], 13);
+
+    // OpenStreetMap Layer
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19
+    }).addTo(map);
+
+    // Beispiel-Standorte
+    var standorte = [
+        { name: "Schule Nürnberg", coords: [49.458, 11.08] },
+        { name: "Supermarkt Südstadt", coords: [49.44, 11.09] },
+        { name: "Gemeindezentrum Nordstadt", coords: [49.47, 11.07] }
+    ];
+
+    // Marker setzen
+    standorte.forEach(place => {
+        L.marker(place.coords).addTo(map)
+            .bindPopup(place.name);
+    });
+</script>
+
 </body>
 </html>
+
