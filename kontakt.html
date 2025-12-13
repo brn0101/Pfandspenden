@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kontakt - Pfandspenden</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
 <header>
@@ -21,20 +22,58 @@
 </header>
 
 <main>
-    <section class="page-section">
-        <h2>Kontakt</h2>
-        <p>Sie haben Fragen, Anregungen oder möchten direkt mit uns in Kontakt treten? Nutzen Sie eine der folgenden Möglichkeiten:</p>
-        <ul>
-            <li>Telefon: +49 123 456789</li>
-            <li>E-Mail: info@pfandspenden.de</li>
-            <li>Kontaktformular: <a href="mailto:info@pfandspenden.de">info@pfandspenden.de</a></li>
-            <li>Adresse: Musterstraße 1, 12345 Musterstadt</li>
-        </ul>
-        <p>Wir bemühen uns, Anfragen so schnell wie möglich zu beantworten.</p>
+    <section class="contact-section">
+        <h2>Kontaktieren Sie uns</h2>
+        <p>Wir freuen uns auf Ihre Nachricht! Hier finden Sie alle Möglichkeiten, uns zu erreichen:</p>
+
+        <div class="contact-container">
+
+            <!-- Linke Spalte: Kontaktformular -->
+            <div class="contact-form-wrapper">
+                <form action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" placeholder="Ihre E-Mail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Betreff</label>
+                        <input type="text" id="subject" name="subject" placeholder="Betreff" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" placeholder="Ihre Nachricht" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Nachricht senden</button>
+                </form>
+            </div>
+
+            <!-- Rechte Spalte: Kontaktinfos -->
+            <div class="contact-info">
+                <h3>Unsere Kontaktdaten</h3>
+                <p><strong>Adresse:</strong> Musterstraße 12, 90402 Nürnberg</p>
+                <p><strong>Telefon:</strong> +49 123 456789</p>
+                <p><strong>E-Mail:</strong> info@pfandspenden.de</p>
+                <p><strong>Öffnungszeiten:</strong> Mo–Fr: 9:00–17:00</p>
+
+
+            </div>
+
+        </div>
     </section>
 </main>
 
-<footer>
+
+
+
+    <footer>
     <div>
         <h3>Folge uns</h3>
         <a href="https://www.instagram.com" target="_blank">Instagram</a> |
@@ -42,11 +81,9 @@
         <a href="https://www.facebook.com" target="_blank">Facebook</a>
     </div>
     <div style="margin-top:20px;">
-        <a href="#">Kontakt</a> | <a href="#">Newsletter</a>
+        <a href="kontakt.html">Kontakt</a> | <a href="newsletter.html">Newsletter</a>
     </div>
-    <div style="margin-top:20px;">
-        <a href="#">Informieren über</a>
-    </div>
+
     <div class="footer-bottom">
         &copy; 2025 Pfandspenden-Initiative |
         <a href="impressum.html">Impressum</a> |

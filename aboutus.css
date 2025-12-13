@@ -1,0 +1,93 @@
+/* Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Über uns Sektion */
+.about-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    font-family: Arial, sans-serif;
+}
+
+/* Header Bereich */
+.about-header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.about-header p {
+    font-size: 1.2em;
+    text-align: center;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Content Bereich: Text + Mission */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1 1 450px;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Mission Box */
+.about-mission {
+    flex: 1 1 300px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-mission h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.about-mission ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-mission li {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.about-mission li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-mission {
+        margin-top: 20px;
+    }
+}
